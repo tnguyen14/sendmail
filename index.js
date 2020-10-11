@@ -4,7 +4,7 @@ const nl2br = require("nl2br");
 const logger = require("pino")();
 
 const transporter = nodemailer.createTransport({
-  service: "Mailgun",
+  host: "smtp.mailgun.org",
   auth: {
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
