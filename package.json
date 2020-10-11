@@ -1,0 +1,38 @@
+{
+  "name": "@tridnguyen/sendmail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnguyen14/sendmail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tnguyen14/sendmail/issues"
+  },
+  "homepage": "https://github.com/tnguyen14/sendmail#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "nl2br": "0.0.3",
+    "nodemailer": "^6.4.13",
+    "pino": "^6.7.0"
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  }
+}
