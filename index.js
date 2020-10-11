@@ -1,6 +1,7 @@
 require("dotenv").config();
 const nodemailer = require("nodemailer");
 const nl2br = require("nl2br");
+const htmlToText = require("nodemailer-html-to-text").htmlToText;
 const logger = require("pino")();
 
 const transporter = nodemailer.createTransport({
@@ -10,11 +11,11 @@ const transporter = nodemailer.createTransport({
     pass: process.env.MAIL_PASS,
   },
 });
+transporter.use("compile", htmlToText());
 
 module.exports = async function (content, opts) {
   const options = {
     from: process.env.MAIL_USER,
-    text: content,
     html: nl2br(content),
     ...opts,
   };
