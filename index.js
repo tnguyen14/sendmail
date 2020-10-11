@@ -13,6 +13,7 @@ const transporter = nodemailer.createTransport({
 
 module.exports = async function (content, opts) {
   const options = {
+    from: process.env.MAIL_USER,
     text: content,
     html: nl2br(content),
     ...opts,
